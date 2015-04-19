@@ -12,15 +12,16 @@
 
 @end
 
-@implementation SportTableController
+@implementation SportTableController{
+    NSArray *sport;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.gamelistControler = [[GameListController alloc] init];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+    sport = [NSArray arrayWithObjects:@"Football", @"Basketball", @"Handball", @"Rugby", @"Foot US", nil];
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -41,18 +42,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    return [sport count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
+    static NSString *simpleTableIdentifier = @"Sport";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [sport objectAtIndex:indexPath.row];
+    return cell;
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -88,26 +99,27 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
+    NSLog(@"---%@", [segue identifier]);
+    if ([[segue identifier] isEqualToString:@"GameTable"]) {
+           NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        GameListController *myVC = [segue destinationViewController];
+        myVC.categories = indexPath.row;
+        
+    }
+  // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.gamelistControler.categories = indexPath.row;
-    
-    [self.parentViewController performSegueWithIdentifier:@"toGameTable" sender:self];
-
-    //index.rox
-    
 }
 
 @end

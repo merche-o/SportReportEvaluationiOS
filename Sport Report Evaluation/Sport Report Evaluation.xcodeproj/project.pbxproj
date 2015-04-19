@@ -18,6 +18,8 @@
 		2E8856401A9F276600D23E36 /* GameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E88563F1A9F276600D23E36 /* GameListController.m */; };
 		2EB1382F1A9F129800B2CDCD /* SportChooseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB1382E1A9F129800B2CDCD /* SportChooseTableView.m */; };
 		2EB138321A9F159100B2CDCD /* SportTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB138311A9F159100B2CDCD /* SportTableController.m */; };
+		2EEF9D221AD7C6E9008E1F9F /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EEF9D211AD7C6E9008E1F9F /* MatchViewController.m */; };
+		2EEF9D271AD8021C008E1F9F /* soccer_field.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EEF9D261AD8021C008E1F9F /* soccer_field.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,9 @@
 		2EB1382E1A9F129800B2CDCD /* SportChooseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportChooseTableView.m; path = ../SportChooseTableView.m; sourceTree = "<group>"; };
 		2EB138301A9F159100B2CDCD /* SportTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SportTableController.h; path = ../SportTableController.h; sourceTree = "<group>"; };
 		2EB138311A9F159100B2CDCD /* SportTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SportTableController.m; path = ../SportTableController.m; sourceTree = "<group>"; };
+		2EEF9D201AD7C6E9008E1F9F /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
+		2EEF9D211AD7C6E9008E1F9F /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
+		2EEF9D261AD8021C008E1F9F /* soccer_field.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soccer_field.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 				2E476F561A8A6AE700E968FE /* ViewController.h */,
 				2E476F571A8A6AE700E968FE /* ViewController.m */,
 				2E476F591A8A6AE700E968FE /* Main.storyboard */,
+				2EEF9D261AD8021C008E1F9F /* soccer_field.png */,
 				2E476F5C1A8A6AE700E968FE /* Images.xcassets */,
 				2E476F5E1A8A6AE700E968FE /* LaunchScreen.xib */,
 				2E476F4F1A8A6AE700E968FE /* Supporting Files */,
@@ -109,6 +115,8 @@
 				2E709C771A9DFF400009DA66 /* MainMenu.m */,
 				2E88563E1A9F276600D23E36 /* GameListController.h */,
 				2E88563F1A9F276600D23E36 /* GameListController.m */,
+				2EEF9D201AD7C6E9008E1F9F /* MatchViewController.h */,
+				2EEF9D211AD7C6E9008E1F9F /* MatchViewController.m */,
 			);
 			path = "Sport Report Evaluation";
 			sourceTree = "<group>";
@@ -220,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E476F5B1A8A6AE700E968FE /* Main.storyboard in Resources */,
+				2EEF9D271AD8021C008E1F9F /* soccer_field.png in Resources */,
 				2E476F601A8A6AE700E968FE /* LaunchScreen.xib in Resources */,
 				2E476F5D1A8A6AE700E968FE /* Images.xcassets in Resources */,
 			);
@@ -243,6 +252,7 @@
 				2E476F581A8A6AE700E968FE /* ViewController.m in Sources */,
 				2E476F551A8A6AE700E968FE /* AppDelegate.m in Sources */,
 				2E476F521A8A6AE700E968FE /* main.m in Sources */,
+				2EEF9D221AD7C6E9008E1F9F /* MatchViewController.m in Sources */,
 				2E8856401A9F276600D23E36 /* GameListController.m in Sources */,
 				2E709C781A9DFF400009DA66 /* MainMenu.m in Sources */,
 				2EB138321A9F159100B2CDCD /* SportTableController.m in Sources */,

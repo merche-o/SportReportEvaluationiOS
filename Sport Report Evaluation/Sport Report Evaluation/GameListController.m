@@ -12,7 +12,9 @@
 
 @end
 
-@implementation GameListController
+@implementation GameListController {
+    NSArray *match;
+}
 
 
 
@@ -22,6 +24,11 @@
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
+    NSLog(@"%d",self.categories);
+    if (self.categories == 0)
+    {
+        match = [NSArray arrayWithObjects:@"Monaco - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
+    }
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -36,26 +43,32 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-   // if (self.categories == 0)
-     //   return 9;
-    return 0;
+    return [match count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
     // Configure the cell...
+    static NSString *simpleTableIdentifier = @"match";
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [match objectAtIndex:indexPath.row];
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -91,14 +104,22 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+    if ([[segue identifier] isEqualToString:@"toMatchView"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        MatchViewController *myVC = [segue destinationViewController];
+        myVC.categories = self.categories;
+        myVC.idMatch = indexPath.row;
+    }
+
 }
-*/
+
 
 @end

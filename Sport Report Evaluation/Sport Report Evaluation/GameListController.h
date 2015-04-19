@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MatchViewController.h"
 
 @interface GameListController : UITableViewController
 @property (nonatomic) int categories;

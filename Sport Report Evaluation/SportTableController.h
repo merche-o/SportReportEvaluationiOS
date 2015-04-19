@@ -11,5 +11,6 @@
 
 @interface SportTableController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) GameListController *gamelistControler;
+@property(nonatomic) int cellChoose;
+
 @end
