@@ -103,7 +103,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"---%@", [segue identifier]);
     if ([[segue identifier] isEqualToString:@"GameTable"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GameListController *myVC = [segue destinationViewController];

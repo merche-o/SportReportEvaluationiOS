@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "testRest.h"
 
 @interface MatchViewController : UIViewController
 
 @property(nonatomic) int categories;
 @property(nonatomic) int idMatch;
+@property(nonatomic, strong) testRest *_matchInfo;
+
+
 
 @end

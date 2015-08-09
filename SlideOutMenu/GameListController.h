@@ -11,5 +11,7 @@
 
 @interface GameListController : UITableViewController
 @property (nonatomic) int categories;
+@property (nonatomic, strong) NSArray *rest;
+
 
 @end

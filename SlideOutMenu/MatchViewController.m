@@ -18,10 +18,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIImageView *imageview;
+    UILabel *label;
     switch (self.categories) {
         case 0:
+            NSLog(@"%@",__matchInfo.TEAM1);
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"soccer_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
         case 1:
