@@ -22,44 +22,64 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+
+    [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.navigationItem.prompt = @"Matchs";
+    
+    switch (self.categories) {
+        case 0:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:38.0/255.0 green:156.0/255.0 blue:122.0/255.0 alpha:1.0]];
+            self.title = @"Soccer";
+            break;
+        case 1:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
+            self.title = @"Basketball";
+            break;
+        case 2:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:30.0/255.0 green:92.0/255.0 blue:144.0/255.0 alpha:1.0]];
+            self.title = @"Handball";
+            break;
+        case 3:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor greenColor]];
+            self.title = @"Foot US";
+            break;
+        case 4:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+            self.title = @"Hockey";
+            break;
+        default:
+            [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
+            self.title = @"Soccer";
+            break;
+    }
+    UIBarButtonItem *btnBack = [[UIBarButtonItem alloc]
+                                initWithTitle:@"Home"
+                                style:UIBarButtonItemStyleBordered
+                                target:self
+                                action:@selector(backButtonClicked:)];
+    [self.navigationItem setLeftBarButtonItem: btnBack];
+    
+
+    
     [self configureRestKit];
     [self loadRest];
-    
-  /*  NSLog(@"%d",self.categories);
-    if (self.categories == 0)
-    {
-        NSLog(@"%@",_rest.firstObject);
-        match =  _rest;//[NSArray arrayWithObjects:@"Foot - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }
-    else if (self.categories == 1)
-    {
-        match = [NSArray arrayWithObjects:@"Basket - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }
-    else if (self.categories == 2)
-    {
-        match = [NSArray arrayWithObjects:@"Hand - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }
-    else if (self.categories == 3)
-    {
-        match = [NSArray arrayWithObjects:@"Foot US - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }
-    else if (self.categories == 4)
-    {
-        match = [NSArray arrayWithObjects:@"Hockey - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }
-    else
-    {
-        match = [NSArray arrayWithObjects:@"Monaco - Saint-Etienne", @"Marseille - Paris", @"Bordeaux - Lens", @"Metz - Toulouse", nil];
-    }*/
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+-(void)backButtonClicked:(UIBarButtonItem*)sender
+{
+    [self.navigationController popViewControllerAnimated: TRUE];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
+}
+
 - (void)configureRestKit
 {
     // initialize AFNetworking HTTPClient
     RKLogConfigureByName("*", RKLogLevelOff);
-    NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
+    //NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
+    
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     
     // initialize RestKit
@@ -140,12 +160,16 @@
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@ - %@ %@ \n %@",res.TEAM1,res.SCORE1, res.SCORE2, res.TEAM2, res.DATE];
     NSLog(@"%@",res.DATE);
     if (res.STATUS == 0)
-        cell.imageView.image = [UIImage imageNamed:@"status_red"];
+        cell.imageView.image = [UIImage imageNamed:@"red_status"];
     else if (res.STATUS == 1)
-        cell.imageView.image = [UIImage imageNamed:@"status_yellow"];
+        cell.imageView.image = [UIImage imageNamed:@"yellow_status"];
     else if (res.STATUS == 2)
-        cell.imageView.image = [UIImage imageNamed:@"status_green"];
+        cell.imageView.image = [UIImage imageNamed:@"green_status"];
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
 }
 
 

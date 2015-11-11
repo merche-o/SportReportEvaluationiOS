@@ -17,8 +17,13 @@
     NSArray *sport;
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
+    self.title = @"Home";
     
     sport = [NSArray arrayWithObjects:@"Soccer", @"Basketball", @"Handball", @"Foot US", @"Hockey", nil];
 
@@ -56,13 +61,17 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
+
     cell.textLabel.text = [sport objectAtIndex:indexPath.row];
-    return cell;
-    
+    [cell.textLabel setTextAlignment:UITextAlignmentCenter];
+    [cell.textLabel setFont:[UIFont systemFontOfSize:32]];
+
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 88;
+}
 
 /*
  // Override to support conditional editing of the table view.
@@ -106,8 +115,8 @@
     if ([[segue identifier] isEqualToString:@"GameTable"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GameListController *myVC = [segue destinationViewController];
+        GameListController *myC = [segue destinationViewController];
         myVC.categories = indexPath.row;
-        
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

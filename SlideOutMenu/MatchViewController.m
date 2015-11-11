@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view.
     UIImageView *imageview;
     UILabel *label;
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    self.title = @"Match";
+    
     switch (self.categories) {
         case 0:
             NSLog(@"%@",__matchInfo.TEAM1);
@@ -30,28 +34,43 @@
             [self.view addSubview:imageview];
             break;
         case 1:
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"basketball_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
         case 2:
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"handball_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
         case 3:
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"football_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
         case 4:
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"hockey_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
         default:
+            label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
             imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
             imageview.image = [UIImage imageNamed:@"soccer_field"];
+            label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
+            [self.view addSubview:label];
             [self.view addSubview:imageview];
             break;
     }
