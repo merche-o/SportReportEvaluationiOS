@@ -22,6 +22,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:
      @{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.title = @"Match";
+   
     
     switch (self.categories) {
         case 0:
