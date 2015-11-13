@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    menu = @[@"first", @"second"];
+    menu = @[@"first", @"second", @"third", @"fourth"];
     
  }
 

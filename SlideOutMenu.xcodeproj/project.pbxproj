@@ -11,6 +11,8 @@
 		2EBCB31C1BCFB01A00A1947C /* SportTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCB31B1BCFB01A00A1947C /* SportTableController.m */; };
 		70B0F89C1B38599300735047 /* ParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B0F89B1B38599300735047 /* ParameterViewController.m */; };
 		70C7DFAE1BF3695500E0F75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C7DFAD1BF3695500E0F75C /* Images.xcassets */; };
+		70C7DFBA1BF4153600E0F75C /* SignInTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C7DFB91BF4153600E0F75C /* SignInTableViewController.m */; };
+		70C7DFBD1BF41D3500E0F75C /* SignUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C7DFBC1BF41D3500E0F75C /* SignUpTableViewController.m */; };
 		70D30EBF1B359E43002D5A39 /* GameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D30EBE1B359E43002D5A39 /* GameListController.m */; };
 		70D30EC21B35A479002D5A39 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D30EC11B35A479002D5A39 /* MatchViewController.m */; };
 		AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3136A619749BAC00F5050B /* SWRevealViewController.m */; };
@@ -51,6 +53,10 @@
 		70B0F89A1B38599300735047 /* ParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterViewController.h; sourceTree = "<group>"; };
 		70B0F89B1B38599300735047 /* ParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterViewController.m; sourceTree = "<group>"; };
 		70C7DFAD1BF3695500E0F75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		70C7DFB81BF4153600E0F75C /* SignInTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInTableViewController.h; sourceTree = "<group>"; };
+		70C7DFB91BF4153600E0F75C /* SignInTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInTableViewController.m; sourceTree = "<group>"; };
+		70C7DFBB1BF41D3500E0F75C /* SignUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpTableViewController.h; sourceTree = "<group>"; };
+		70C7DFBC1BF41D3500E0F75C /* SignUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpTableViewController.m; sourceTree = "<group>"; };
 		70D30EBA1B3591E9002D5A39 /* SportTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportTableController.h; sourceTree = "<group>"; };
 		70D30EBD1B359E43002D5A39 /* GameListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameListController.h; sourceTree = "<group>"; };
 		70D30EBE1B359E43002D5A39 /* GameListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListController.m; sourceTree = "<group>"; };
@@ -151,6 +157,10 @@
 		ACA1018919746FA000A8B82E /* SlideOutMenu */ = {
 			isa = PBXGroup;
 			children = (
+				70C7DFBB1BF41D3500E0F75C /* SignUpTableViewController.h */,
+				70C7DFBC1BF41D3500E0F75C /* SignUpTableViewController.m */,
+				70C7DFB81BF4153600E0F75C /* SignInTableViewController.h */,
+				70C7DFB91BF4153600E0F75C /* SignInTableViewController.m */,
 				70D30EBA1B3591E9002D5A39 /* SportTableController.h */,
 				2EBCB31B1BCFB01A00A1947C /* SportTableController.m */,
 				ACA1019219746FA000A8B82E /* AppDelegate.h */,
@@ -345,7 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACA1019A19746FA000A8B82E /* ViewController.m in Sources */,
+				70C7DFBA1BF4153600E0F75C /* SignInTableViewController.m in Sources */,
 				ACA1019419746FA000A8B82E /* AppDelegate.m in Sources */,
+				70C7DFBD1BF41D3500E0F75C /* SignUpTableViewController.m in Sources */,
 				2E24E9411B440DD50016D1FB /* testRest.m in Sources */,
 				AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */,
 				70D30EC21B35A479002D5A39 /* MatchViewController.m in Sources */,
