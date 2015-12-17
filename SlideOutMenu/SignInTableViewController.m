@@ -9,10 +9,101 @@
 #import "SignInTableViewController.h"
 
 @interface SignInTableViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *username;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UIButton *signinButton;
+@property (nonatomic, strong) NSArray *rest;
 
 @end
 
+
+
 @implementation SignInTableViewController
+
+- (IBAction)login:(id)sender {
+    NSLog(self.username.text);
+    NSLog(self.password.text);
+    
+    [self configureRestKit];
+    [self loadRest:self.username.text password:self.password.text];
+    
+    
+}
+
+- (void)configureRestKit
+{
+    // initialize AFNetworking HTTPClient
+    RKLogConfigureByName("*", RKLogLevelOff);
+    NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
+    //NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
+    
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    
+    // initialize RestKit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
+    // setup object mappings
+    RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[UserData class]];
+    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"USER"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"PASSWORD"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"EMAIL"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"PICTURE"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"DATE_CREATION"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"CHECK_ACCOUNT"]];
+    
+    
+    
+    // register mappings with the provider using a response descriptor
+    RKResponseDescriptor *responseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
+                                                 method:RKRequestMethodPOST
+                                            pathPattern:@"login"
+                                                keyPath:@"Users"
+                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor];
+    
+    RKObjectMapping *requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
+    [requestMapping addAttributeMappingsFromArray:@[@"USER", @"PASSWORD"]];
+    RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping
+                                                                                   objectClass:[UserData class] rootKeyPath:nil];
+    
+    [objectManager addRequestDescriptor: requestDescriptor];
+
+}
+
+
+- (void)loadRest:(NSString *)username password:(NSString *)pwd
+{
+    /*   NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
+     NSString *clientID = kCLIENTID;
+     NSString *clientSecret = kCLIENTSECRET;*/
+    
+    NSDictionary *queryParams = NULL;
+    UserData *data = [UserData new];
+    
+    data.USER = username;
+    data.PASSWORD= pwd;
+    NSLog(@"%@",data.USER);
+    [[RKObjectManager sharedManager] postObject:data path:@"/api/login" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        _rest = mappingResult.array;
+        [self.tableView reloadData];
+        [self performSegueWithIdentifier:@"login" sender:nil];
+
+    }
+                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                           // NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+                                            self.username.text = @"";
+                                            self.password.text = @"";
+                                        }];
+
+
+    
+}
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,6 +138,7 @@
     // Return the number of rows in the section.
     return 0;
 }
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

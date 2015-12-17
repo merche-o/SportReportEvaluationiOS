@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/RestKit.h>
+
+#import "UserData.h"
 #import "SWRevealViewController.h"
 
 @interface SignInTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
