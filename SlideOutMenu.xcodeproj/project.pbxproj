@@ -16,6 +16,9 @@
 		70C7DFBD1BF41D3500E0F75C /* SignUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C7DFBC1BF41D3500E0F75C /* SignUpTableViewController.m */; };
 		70D30EBF1B359E43002D5A39 /* GameListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D30EBE1B359E43002D5A39 /* GameListController.m */; };
 		70D30EC21B35A479002D5A39 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D30EC11B35A479002D5A39 /* MatchViewController.m */; };
+		70F2534E1C3C7C0A00D23C3B /* StatTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F2534D1C3C7C0A00D23C3B /* StatTableViewController.m */; };
+		70F253541C3C844F00D23C3B /* SelectTeamStatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F253531C3C844F00D23C3B /* SelectTeamStatController.m */; };
+		70F253571C3C8BA300D23C3B /* SelectPlayerStatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F253561C3C8BA300D23C3B /* SelectPlayerStatController.m */; };
 		AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3136A619749BAC00F5050B /* SWRevealViewController.m */; };
 		ACA1018419746FA000A8B82E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1018319746FA000A8B82E /* Foundation.framework */; };
 		ACA1018619746FA000A8B82E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1018519746FA000A8B82E /* CoreGraphics.framework */; };
@@ -65,6 +68,12 @@
 		70D30EBE1B359E43002D5A39 /* GameListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameListController.m; sourceTree = "<group>"; };
 		70D30EC01B35A479002D5A39 /* MatchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchViewController.h; sourceTree = "<group>"; };
 		70D30EC11B35A479002D5A39 /* MatchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchViewController.m; sourceTree = "<group>"; };
+		70F2534C1C3C7C0A00D23C3B /* StatTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatTableViewController.h; path = SlideOutMenu/StatTableViewController.h; sourceTree = "<group>"; };
+		70F2534D1C3C7C0A00D23C3B /* StatTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatTableViewController.m; path = SlideOutMenu/StatTableViewController.m; sourceTree = "<group>"; };
+		70F253521C3C844F00D23C3B /* SelectTeamStatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectTeamStatController.h; path = SlideOutMenu/SelectTeamStatController.h; sourceTree = "<group>"; };
+		70F253531C3C844F00D23C3B /* SelectTeamStatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectTeamStatController.m; path = SlideOutMenu/SelectTeamStatController.m; sourceTree = "<group>"; };
+		70F253551C3C8BA300D23C3B /* SelectPlayerStatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectPlayerStatController.h; path = SlideOutMenu/SelectPlayerStatController.h; sourceTree = "<group>"; };
+		70F253561C3C8BA300D23C3B /* SelectPlayerStatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectPlayerStatController.m; path = SlideOutMenu/SelectPlayerStatController.m; sourceTree = "<group>"; };
 		AC3136A519749BAC00F5050B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SlideOutMenuFiles/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		AC3136A619749BAC00F5050B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SlideOutMenuFiles/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		ACA1018019746FA000A8B82E /* SlideOutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideOutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +135,12 @@
 		ACA1017719746FA000A8B82E = {
 			isa = PBXGroup;
 			children = (
+				70F2534C1C3C7C0A00D23C3B /* StatTableViewController.h */,
+				70F2534D1C3C7C0A00D23C3B /* StatTableViewController.m */,
+				70F253521C3C844F00D23C3B /* SelectTeamStatController.h */,
+				70F253531C3C844F00D23C3B /* SelectTeamStatController.m */,
+				70F253551C3C8BA300D23C3B /* SelectPlayerStatController.h */,
+				70F253561C3C8BA300D23C3B /* SelectPlayerStatController.m */,
 				2E0DE9831C230FA800FF8EF5 /* UserData.h */,
 				2E0DE9841C230FA800FF8EF5 /* UserData.m */,
 				2E24E93F1B440DD50016D1FB /* testRest.h */,
@@ -363,7 +378,10 @@
 				70C7DFBA1BF4153600E0F75C /* SignInTableViewController.m in Sources */,
 				ACA1019419746FA000A8B82E /* AppDelegate.m in Sources */,
 				70C7DFBD1BF41D3500E0F75C /* SignUpTableViewController.m in Sources */,
+				70F253571C3C8BA300D23C3B /* SelectPlayerStatController.m in Sources */,
 				2E24E9411B440DD50016D1FB /* testRest.m in Sources */,
+				70F253541C3C844F00D23C3B /* SelectTeamStatController.m in Sources */,
+				70F2534E1C3C7C0A00D23C3B /* StatTableViewController.m in Sources */,
 				AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */,
 				70D30EC21B35A479002D5A39 /* MatchViewController.m in Sources */,
 				2EBCB31C1BCFB01A00A1947C /* SportTableController.m in Sources */,
