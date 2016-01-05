@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2E0DE9851C230FA800FF8EF5 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DE9841C230FA800FF8EF5 /* UserData.m */; };
 		2E24E9411B440DD50016D1FB /* testRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E24E9401B440DD50016D1FB /* testRest.m */; };
+		2E33F1E21C3C547400692777 /* TeamStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E33F1E11C3C547400692777 /* TeamStatViewController.m */; };
 		2EBCB31C1BCFB01A00A1947C /* SportTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCB31B1BCFB01A00A1947C /* SportTableController.m */; };
 		70B0F89C1B38599300735047 /* ParameterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B0F89B1B38599300735047 /* ParameterViewController.m */; };
 		70C7DFAE1BF3695500E0F75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70C7DFAD1BF3695500E0F75C /* Images.xcassets */; };
@@ -18,7 +19,6 @@
 		70D30EC21B35A479002D5A39 /* MatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70D30EC11B35A479002D5A39 /* MatchViewController.m */; };
 		AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3136A619749BAC00F5050B /* SWRevealViewController.m */; };
 		ACA1018419746FA000A8B82E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1018319746FA000A8B82E /* Foundation.framework */; };
-		ACA1018619746FA000A8B82E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1018519746FA000A8B82E /* CoreGraphics.framework */; };
 		ACA1018819746FA000A8B82E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1018719746FA000A8B82E /* UIKit.framework */; };
 		ACA1018E19746FA000A8B82E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACA1018C19746FA000A8B82E /* InfoPlist.strings */; };
 		ACA1019019746FA000A8B82E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA1018F19746FA000A8B82E /* main.m */; };
@@ -31,7 +31,7 @@
 		ACA101AD19746FA000A8B82E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACA101AB19746FA000A8B82E /* InfoPlist.strings */; };
 		ACA101AF19746FA000A8B82E /* SlideOutMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA101AE19746FA000A8B82E /* SlideOutMenuTests.m */; };
 		ACA101BE1974762B00A8B82E /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA101BD1974762B00A8B82E /* NavigationViewController.m */; };
-		DE089CCCC5C79FAD29E12019 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9CA614DE039F60B2C07BBC /* libPods.a */; };
+		E5ADFAC68DF02BA2C94BBCBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6FDB11EA72F9EC312283B29 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +44,29 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E33F1E81C3C756600692777 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		14B7F2ACA0C2E0ED01ED42E7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2E0DE9831C230FA800FF8EF5 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		2E0DE9841C230FA800FF8EF5 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
 		2E24E93F1B440DD50016D1FB /* testRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testRest.h; sourceTree = "<group>"; };
 		2E24E9401B440DD50016D1FB /* testRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testRest.m; sourceTree = "<group>"; };
+		2E33F1E01C3C547400692777 /* TeamStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamStatViewController.h; sourceTree = "<group>"; };
+		2E33F1E11C3C547400692777 /* TeamStatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamStatViewController.m; sourceTree = "<group>"; };
 		2EBCB31B1BCFB01A00A1947C /* SportTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportTableController.m; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
 		35B58A6BA795BD1F82FC8265 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		3D9CA614DE039F60B2C07BBC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B0F89A1B38599300735047 /* ParameterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParameterViewController.h; sourceTree = "<group>"; };
 		70B0F89B1B38599300735047 /* ParameterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParameterViewController.m; sourceTree = "<group>"; };
 		70C7DFAD1BF3695500E0F75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -87,6 +101,7 @@
 		ACA101AE19746FA000A8B82E /* SlideOutMenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideOutMenuTests.m; sourceTree = "<group>"; };
 		ACA101BC1974762B00A8B82E /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		ACA101BD1974762B00A8B82E /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		F6FDB11EA72F9EC312283B29 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACA1018619746FA000A8B82E /* CoreGraphics.framework in Frameworks */,
 				ACA1018819746FA000A8B82E /* UIKit.framework in Frameworks */,
 				ACA1018419746FA000A8B82E /* Foundation.framework in Frameworks */,
-				DE089CCCC5C79FAD29E12019 /* libPods.a in Frameworks */,
+				E5ADFAC68DF02BA2C94BBCBF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +168,7 @@
 				ACA1018519746FA000A8B82E /* CoreGraphics.framework */,
 				ACA1018719746FA000A8B82E /* UIKit.framework */,
 				ACA101A219746FA000A8B82E /* XCTest.framework */,
-				3D9CA614DE039F60B2C07BBC /* libPods.a */,
+				F6FDB11EA72F9EC312283B29 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,6 +197,8 @@
 				70D30EBE1B359E43002D5A39 /* GameListController.m */,
 				70C7DFAD1BF3695500E0F75C /* Images.xcassets */,
 				ACA1018A19746FA000A8B82E /* Supporting Files */,
+				2E33F1E01C3C547400692777 /* TeamStatViewController.h */,
+				2E33F1E11C3C547400692777 /* TeamStatViewController.m */,
 			);
 			path = SlideOutMenu;
 			sourceTree = "<group>";
@@ -239,6 +255,8 @@
 				ACA1017D19746FA000A8B82E /* Frameworks */,
 				ACA1017E19746FA000A8B82E /* Resources */,
 				72C940D080AD2FB1AA490724 /* Copy Pods Resources */,
+				2E33F1E81C3C756600692777 /* Embed Frameworks */,
+				B791218496DBE23719260E87 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,7 +291,7 @@
 		ACA1017819746FA000A8B82E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Archetapp;
 				TargetAttributes = {
 					ACA101A019746FA000A8B82E = {
@@ -352,6 +370,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B791218496DBE23719260E87 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -370,6 +403,7 @@
 				2E0DE9851C230FA800FF8EF5 /* UserData.m in Sources */,
 				70D30EBF1B359E43002D5A39 /* GameListController.m in Sources */,
 				70B0F89C1B38599300735047 /* ParameterViewController.m in Sources */,
+				2E33F1E21C3C547400692777 /* TeamStatViewController.m in Sources */,
 				ACA101BE1974762B00A8B82E /* NavigationViewController.m in Sources */,
 				ACA1019019746FA000A8B82E /* main.m in Sources */,
 			);
@@ -439,6 +473,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -453,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -485,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -495,11 +530,26 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35B58A6BA795BD1F82FC8265 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideOutMenu/SlideOutMenu-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"/**",
+					"\"${PODS_ROOT}/Headers/Public/JBChartView\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"/**",
+				);
 				INFOPLIST_FILE = "SlideOutMenu/SlideOutMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "Archetapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -510,11 +560,26 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14B7F2ACA0C2E0ED01ED42E7 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideOutMenu/SlideOutMenu-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)/**",
+					"\"${PODS_ROOT}/Headers/Public\"/**",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"/**",
+					"\"${PODS_ROOT}/Headers/Public/JBChartView\"/**",
+					"\"${PODS_ROOT}/Headers/Public/RestKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/SOCKit\"/**",
+					"\"${PODS_ROOT}/Headers/Public/TransitionKit\"/**",
+				);
 				INFOPLIST_FILE = "SlideOutMenu/SlideOutMenu-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				New_Setting = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "Archetapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -537,6 +602,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "SlideOutMenuTests/SlideOutMenuTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Archetapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -555,6 +621,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SlideOutMenu/SlideOutMenu-Prefix.pch";
 				INFOPLIST_FILE = "SlideOutMenuTests/SlideOutMenuTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Archetapp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
