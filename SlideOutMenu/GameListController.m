@@ -9,6 +9,8 @@
 #import "GameListController.h"
 #import <RestKit/RestKit.h>
 #import "testRest.h"
+#import "teamData.h"
+#import "UserData.h"
 
 @interface GameListController ()
 
@@ -63,7 +65,6 @@
     
 
     
-    [self configureRestKit];
     [self loadRest];
 }
 
@@ -73,40 +74,6 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
 }
 
-- (void)configureRestKit
-{
-    // initialize AFNetworking HTTPClient
-    RKLogConfigureByName("*", RKLogLevelOff);
-    //NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
-    NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
-    
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    
-    // initialize RestKit
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-    // setup object mappings
-    RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[testRest class]];
-    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"DATE"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"TEAM1"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"TEAM2"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"SCORE1"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"SCORE2"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"STATUS"]];
-
-
-    
-    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor =
-    [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
-                                                 method:RKRequestMethodGET
-                                            pathPattern:@"GAME"
-                                                keyPath:@"Users"
-                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    [objectManager addResponseDescriptor:responseDescriptor];
-}
 
 - (void)loadRest
 {

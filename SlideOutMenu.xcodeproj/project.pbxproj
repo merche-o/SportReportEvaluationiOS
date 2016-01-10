@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E0DE9851C230FA800FF8EF5 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0DE9841C230FA800FF8EF5 /* UserData.m */; };
+		2E1D2BD51C40A0FF009FC4DA /* PlayersStatsTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D2BD41C40A0FF009FC4DA /* PlayersStatsTabBarController.m */; };
+		2E1D2BDC1C4167FC009FC4DA /* teamData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1D2BDB1C4167FC009FC4DA /* teamData.m */; };
 		2E24E9411B440DD50016D1FB /* testRest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E24E9401B440DD50016D1FB /* testRest.m */; };
 		2E33F1E21C3C547400692777 /* TeamStatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E33F1E11C3C547400692777 /* TeamStatViewController.m */; };
 		2EBCB31C1BCFB01A00A1947C /* SportTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCB31B1BCFB01A00A1947C /* SportTableController.m */; };
@@ -64,6 +66,10 @@
 		14B7F2ACA0C2E0ED01ED42E7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2E0DE9831C230FA800FF8EF5 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
 		2E0DE9841C230FA800FF8EF5 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		2E1D2BD31C40A0FF009FC4DA /* PlayersStatsTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersStatsTabBarController.h; sourceTree = "<group>"; };
+		2E1D2BD41C40A0FF009FC4DA /* PlayersStatsTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersStatsTabBarController.m; sourceTree = "<group>"; };
+		2E1D2BDA1C4167FC009FC4DA /* teamData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teamData.h; sourceTree = "<group>"; };
+		2E1D2BDB1C4167FC009FC4DA /* teamData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teamData.m; sourceTree = "<group>"; };
 		2E24E93F1B440DD50016D1FB /* testRest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testRest.h; sourceTree = "<group>"; };
 		2E24E9401B440DD50016D1FB /* testRest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testRest.m; sourceTree = "<group>"; };
 		2E33F1E01C3C547400692777 /* TeamStatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamStatViewController.h; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 		ACA1017719746FA000A8B82E = {
 			isa = PBXGroup;
 			children = (
+				2E1D2BDA1C4167FC009FC4DA /* teamData.h */,
+				2E1D2BDB1C4167FC009FC4DA /* teamData.m */,
 				70F2534C1C3C7C0A00D23C3B /* StatTableViewController.h */,
 				70F2534D1C3C7C0A00D23C3B /* StatTableViewController.m */,
 				70F253521C3C844F00D23C3B /* SelectTeamStatController.h */,
@@ -214,6 +222,8 @@
 				ACA1018A19746FA000A8B82E /* Supporting Files */,
 				2E33F1E01C3C547400692777 /* TeamStatViewController.h */,
 				2E33F1E11C3C547400692777 /* TeamStatViewController.m */,
+				2E1D2BD31C40A0FF009FC4DA /* PlayersStatsTabBarController.h */,
+				2E1D2BD41C40A0FF009FC4DA /* PlayersStatsTabBarController.m */,
 			);
 			path = SlideOutMenu;
 			sourceTree = "<group>";
@@ -413,6 +423,8 @@
 				70C7DFBD1BF41D3500E0F75C /* SignUpTableViewController.m in Sources */,
 				70F253571C3C8BA300D23C3B /* SelectPlayerStatController.m in Sources */,
 				2E24E9411B440DD50016D1FB /* testRest.m in Sources */,
+				2E1D2BDC1C4167FC009FC4DA /* teamData.m in Sources */,
+				2E1D2BD51C40A0FF009FC4DA /* PlayersStatsTabBarController.m in Sources */,
 				70F253541C3C844F00D23C3B /* SelectTeamStatController.m in Sources */,
 				70F2534E1C3C7C0A00D23C3B /* StatTableViewController.m in Sources */,
 				AC3136A719749BAC00F5050B /* SWRevealViewController.m in Sources */,

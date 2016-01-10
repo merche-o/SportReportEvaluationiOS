@@ -15,8 +15,8 @@
 {
     [super viewDidLoad];
     NSArray *items = @[
-                       [PNPieChartDataItem dataItemWithValue:40 color:PNRed description:@"SR"],
-                       [PNPieChartDataItem dataItemWithValue:60 color:PNYellow description:@"PSG"],
+                       [PNPieChartDataItem dataItemWithValue:40 color:PNRed description:self._matchInfo.TEAM1],
+                       [PNPieChartDataItem dataItemWithValue:60 color:PNYellow description:self._matchInfo.TEAM2],
                        ];
     
     
@@ -50,7 +50,7 @@
     [barChart setXLabels:@[@"Pss", @"Pss",@"Ctr.",@"Ctr.",@"Tirs",@"Tirs",@"Tête",@"Tête",@"Tcl.",@"Tcl.",@"Cor.",@"Cor.",@"CF",@"CF",@"B",@"B"]];
     //[barChart setYLabels:@[@-10,@0,@10]];
     [barChart setYValues:@[@10000.0,@30000.0,@10000.0,@100000.0,@500000.0,@1000000.0,@1150000.0,@2150000.0]];
-    [barChart setYValues:@[@50,@80,@2,@10,@1,@11,@10,@20,@20,@13,@1,@3,@1,@4,@2,@2]];
+    [barChart setYValues:@[@50,@80,@2,@10,@1,@11,@10,@20,@20,@13,@1,@3,@1,@4,self._matchInfo.SCORE1,self._matchInfo.SCORE2]];
     [barChart setStrokeColors:@[PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow,PNRed,PNYellow]];
     
     

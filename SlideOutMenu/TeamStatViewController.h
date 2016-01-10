@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "PNChartDelegate.h"
+#import "testRest.h"
 #import "PNChart.h"
 
 
 @interface TeamStatViewController : UIViewController<PNChartDelegate>
-
+@property(nonatomic) int categories;
+@property(nonatomic) int idMatch;
+@property(nonatomic, strong) testRest *_matchInfo;
 @end

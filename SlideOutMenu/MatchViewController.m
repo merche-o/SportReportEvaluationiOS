@@ -227,5 +227,18 @@
  }
  */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+  
+        UITabBarController *tabBar = [segue destinationViewController];
+    ((TeamStatViewController *)tabBar.viewControllers[0])._matchInfo = self._matchInfo;
+    ((TeamStatViewController *)tabBar.viewControllers[1])._matchInfo = self._matchInfo;
+
+    
+}
+
+
+
 @end
 

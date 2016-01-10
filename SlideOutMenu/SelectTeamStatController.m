@@ -8,7 +8,7 @@
 
 #import "SelectTeamStatController.h"
 #import <RestKit/RestKit.h>
-#import "testRest.h"
+#import "teamData.h"
 
 @interface SelectTeamStatController ()
 
@@ -30,7 +30,7 @@
     switch (self.categories) {
         case 0:
             [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:38.0/255.0 green:156.0/255.0 blue:122.0/255.0 alpha:1.0]];
-            self.title = @"Soccer";
+            self.title = @"Football";
             break;
         case 1:
             [self.navigationController.navigationBar setBarTintColor:[UIColor orangeColor]];
@@ -62,7 +62,7 @@
     
     
     
-    [self configureRestKit];
+  //  [self configureRestKit];
     [self loadRest];
 }
 
@@ -72,35 +72,6 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor viewFlipsideBackgroundColor]];
 }
 
-- (void)configureRestKit
-{
-    // initialize AFNetworking HTTPClient
-    RKLogConfigureByName("*", RKLogLevelOff);
-    NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
-    //NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
-    
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
-    
-    // initialize RestKit
-    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
-    
-    // setup object mappings
-    RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[testRest class]];
-    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"TEAM1"]];
-    
-    
-    
-    // register mappings with the provider using a response descriptor
-    RKResponseDescriptor *responseDescriptor =
-    [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
-                                                 method:RKRequestMethodGET
-                                            pathPattern:@"GAME"
-                                                keyPath:@"Users"
-                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
-    
-    [objectManager addResponseDescriptor:responseDescriptor];
-}
 
 - (void)loadRest
 {
@@ -109,9 +80,9 @@
      NSString *clientSecret = kCLIENTSECRET;*/
     
     NSDictionary *queryParams = NULL;
-    
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/api/GAME?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3sibmFtZSI6IlRlc3QiLCJwYXNzd2QiOiJ0ZXN0In1d.cgRvLAcgkD03lBa8IgfJuXpb1WJhR7iUMIGEt9ctYVg"
-                                           parameters:queryParams
+    NSString *url = [NSString stringWithFormat:@"%@%@%@", @"/api/TEAMS/", self.title, @"?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3sibmFtZSI6IlRlc3QiLCJwYXNzd2QiOiJ0ZXN0In1d.cgRvLAcgkD03lBa8IgfJuXpb1WJhR7iUMIGEt9ctYVg"
+];
+    [[RKObjectManager sharedManager] getObjectsAtPath:url                                          parameters:queryParams
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _rest = mappingResult.array;
                                                   [self.tableView reloadData];
@@ -145,12 +116,12 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    testRest *res = _rest[indexPath.row];
+    teamData *res = _rest[indexPath.row];
     // cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 1;
     [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",res.TEAM1];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",res.TEAM_NAME];
     return cell;
 }
 
