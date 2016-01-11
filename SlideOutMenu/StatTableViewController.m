@@ -114,7 +114,6 @@
     if ([[segue identifier] isEqualToString:@"TeamTable"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         SelectTeamStatController *myVC = [segue destinationViewController];
-        SelectTeamStatController *myC = [segue destinationViewController];
         myVC.categories = indexPath.row;
     }
 }

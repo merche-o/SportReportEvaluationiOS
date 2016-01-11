@@ -16,6 +16,9 @@
 @property (nonatomic, strong) NSString *DATE;
 @property (nonatomic,strong) NSString *TEAM1;
 @property (nonatomic,strong) NSString *TEAM2;
+@property (nonatomic,strong) NSString *TEAM_NAME1;
+@property (nonatomic,strong) NSString *TEAM_NAME2;
+
 @property (nonatomic,strong) NSString *SCORE1;
 @property (nonatomic,strong) NSString *SCORE2;
 @property (nonatomic) int STATUS;

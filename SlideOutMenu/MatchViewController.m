@@ -7,6 +7,8 @@
 //
 
 #import "MatchViewController.h"
+#import "SelectPlayerStatController.h"
+#import "PlayersStatsTabBarController.h"
 
 @interface MatchViewController ()
 
@@ -233,7 +235,13 @@
   
         UITabBarController *tabBar = [segue destinationViewController];
     ((TeamStatViewController *)tabBar.viewControllers[0])._matchInfo = self._matchInfo;
-    ((TeamStatViewController *)tabBar.viewControllers[1])._matchInfo = self._matchInfo;
+    ((PlayersStatsTabBarController *)tabBar.viewControllers[1])._matchInfo = self._matchInfo;
+    
+    ((SelectPlayerStatController *)((PlayersStatsTabBarController *)tabBar.viewControllers[1]).viewControllers[0])._matchInfo.TEAM_NAME = self._matchInfo.TEAM_NAME1;
+    ((SelectPlayerStatController *)((PlayersStatsTabBarController *)tabBar.viewControllers[1]).viewControllers[1])._matchInfo.TEAM_NAME = self._matchInfo.TEAM_NAME2;
+    /*
+    ((SelectPlayerStatController *)tabBar.viewControllers[1])._matchInfo.TEAM_NAME = self._matchInfo.TEAM_NAME2;
+*/
 
     
 }

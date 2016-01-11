@@ -40,6 +40,9 @@
     [venueMapping addAttributeMappingsFromArray:@[@"DATE"]];
     [venueMapping addAttributeMappingsFromArray:@[@"TEAM1"]];
     [venueMapping addAttributeMappingsFromArray:@[@"TEAM2"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"TEAM_NAME1"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"TEAM_NAME2"]];
+
     [venueMapping addAttributeMappingsFromArray:@[@"SCORE1"]];
     [venueMapping addAttributeMappingsFromArray:@[@"SCORE2"]];
     [venueMapping addAttributeMappingsFromArray:@[@"STATUS"]];
@@ -217,7 +220,6 @@
     if ([[segue identifier] isEqualToString:@"GameTable"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GameListController *myVC = [segue destinationViewController];
-        GameListController *myC = [segue destinationViewController];
         myVC.categories = indexPath.row;
     }
     // Get the new view controller using [segue destinationViewController].
