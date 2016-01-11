@@ -24,7 +24,7 @@
     NSLog(self.username.text);
     NSLog(self.password.text);
     
-    [self configureRestKit];
+   // [self configureRestKit];
     [self loadRest:self.username.text password:self.password.text];
     
     
@@ -93,7 +93,7 @@
 
     }
                                         failure:^(RKObjectRequestOperation *operation, NSError *error) {
-                                           // NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+                                           NSLog(@"What do you mean by 'there is no coffee?': %@", error);
                                             self.username.text = @"";
                                             self.password.text = @"";
                                         }];
