@@ -122,7 +122,7 @@
     cell.textLabel.numberOfLines = 1;
     [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
     [cell.textLabel setTextAlignment:UITextAlignmentCenter];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",res.TEAM_NAME];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",res.INITIALS];
     return cell;
 }
 

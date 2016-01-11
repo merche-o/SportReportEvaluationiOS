@@ -650,7 +650,7 @@
         <!--Item-->
         <scene sceneID="NYi-IK-I18">
             <objects>
-                <tableViewController id="IUe-Vu-7q2" sceneMemberID="viewController">
+                <tableViewController id="IUe-Vu-7q2" customClass="SelectPlayerStatController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kVc-eY-iI3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -697,7 +697,7 @@
         <!--Item-->
         <scene sceneID="nk3-vv-xGS">
             <objects>
-                <tableViewController id="olN-hH-TeV" sceneMemberID="viewController">
+                <tableViewController id="olN-hH-TeV" customClass="SelectPlayerStatController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mqO-ao-wu9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -721,7 +721,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJA-Md-STv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="2208"/>
+            <point key="canvasLocation" x="2524.5" y="2388.5"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import "SelectPlayerStatController.h"
+#import "playerData.h"
 
 @interface SelectPlayerStatController ()
 
@@ -22,7 +23,31 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self loadRest];
+
 }
+
+- (void)loadRest
+{
+    /*   NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
+     NSString *clientID = kCLIENTID;
+     NSString *clientSecret = kCLIENTSECRET;*/
+    
+    NSDictionary *queryParams = NULL;
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@%@%@", @"/api/playersbyteam?token=", G_Token, @"&team=", self._matchInfo.TEAM_NAME
+                     ];
+    NSLog(@"%@",url);
+    [[RKObjectManager sharedManager] getObjectsAtPath:url                                          parameters:queryParams
+                                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                  _rest = mappingResult.array;
+                                                  [self.tableView reloadData];
+                                              }
+                                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                  NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+                                              }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,24 +59,35 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return _rest.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    static NSString *cellIdentifier = @"player";
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    playerData *res = _rest[indexPath.row];
+    // cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.numberOfLines = 1;
+    [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
+    [cell.textLabel setTextAlignment:UITextAlignmentCenter];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",res.NAME];
     return cell;
 }
-*/
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
 
 /*
 // Override to support conditional editing of the table view.

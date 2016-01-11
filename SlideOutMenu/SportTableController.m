@@ -11,6 +11,7 @@
 #import <RestKit/RestKit.h>
 #import "testRest.h"
 #import "teamData.h"
+#import "playerData.h"
 #import "UserData.h"
 
 @interface SportTableController ()
@@ -55,9 +56,22 @@
     
     
     [objectManager addResponseDescriptor:responseDescriptor];
+    
+    venueMapping = [RKObjectMapping mappingForClass:[playerData class]];
+    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"NAME"]];
+    responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
+                                                                      method:RKRequestMethodGET
+                                                                 pathPattern:@"playersbyteam"
+                                                                     keyPath:@"Users"
+                                                                 statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    [objectManager addResponseDescriptor:responseDescriptor];
+
+    
     venueMapping = [RKObjectMapping mappingForClass:[teamData class]];
     [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
     [venueMapping addAttributeMappingsFromArray:@[@"TEAM_NAME"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"INITIALS"]];
     responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
                                                                       method:RKRequestMethodGET
                                                                  pathPattern:@"TEAMS/Football"

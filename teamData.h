@@ -12,6 +12,8 @@
 
 @property (nonatomic) int ID;
 @property (nonatomic,strong) NSString *TEAM_NAME;
+@property (nonatomic,strong) NSString *INITIALS;
+
 @property (nonatomic,strong) NSString *SPORT;
 
 
