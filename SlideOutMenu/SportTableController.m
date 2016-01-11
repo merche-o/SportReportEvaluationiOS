@@ -67,13 +67,18 @@
     
     
     venueMapping = [RKObjectMapping mappingForClass:[UserData class]];
-    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"USER"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"PASSWORD"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"EMAIL"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"PICTURE"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"DATE_CREATION"]];
-    [venueMapping addAttributeMappingsFromArray:@[@"CHECK_ACCOUNT"]];
+    [venueMapping addAttributeMappingsFromDictionary:@{
+                                                  @"Users.ID":   @"ID",
+                                                  @"Users.USER":     @"USER",
+                                                  @"Users.PASSWORD":        @"PASSWORD",
+                                                  @"Users.EMAIL":        @"EMAIL",
+                                                  @"Users.PICTURE":        @"PICTURE",
+                                                  @"Users.DATE_CREATION":        @"DATE_CREATION",
+                                                  @"Users.CHECK_ACCOUNT":        @"CHECK_ACCOUNT",
+                                                  @"Token":        @"Token",
+                                                  }];
+
+    
     
     
     
@@ -82,10 +87,13 @@
     [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
                                                  method:RKRequestMethodPOST
                                             pathPattern:@"login"
-                                                keyPath:@"Users"
+                                                keyPath:nil
                                             statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
     [objectManager addResponseDescriptor:responseDescriptor];
+    
+    
+
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
     [requestMapping addAttributeMappingsFromArray:@[@"USER", @"PASSWORD"]];
     RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping

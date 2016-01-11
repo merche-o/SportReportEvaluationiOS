@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Archetapp. All rights reserved.
 //
 
+ NSString  *G_Token;
+
 #import <Foundation/Foundation.h>
 
 @interface testRest : NSObject

@@ -17,5 +17,6 @@
 @property (nonatomic,strong) NSString *PICTURE;
 @property (nonatomic,strong) NSString *DATE_CREATION;
 @property (nonatomic) int CHECK_ACCOUNT;
+@property (nonatomic,strong) NSString *Token;
 
 @end

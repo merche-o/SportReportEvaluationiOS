@@ -88,6 +88,8 @@
     NSLog(@"%@",data.USER);
     [[RKObjectManager sharedManager] postObject:data path:@"/api/login" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         _rest = mappingResult.array;
+         G_Token = ((UserData*)_rest[0]).Token;
+        
         [self.tableView reloadData];
         [self performSegueWithIdentifier:@"login" sender:nil];
 

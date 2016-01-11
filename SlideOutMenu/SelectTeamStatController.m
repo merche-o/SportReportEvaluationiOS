@@ -80,7 +80,8 @@
      NSString *clientSecret = kCLIENTSECRET;*/
     
     NSDictionary *queryParams = NULL;
-    NSString *url = [NSString stringWithFormat:@"%@%@%@", @"/api/TEAMS/", self.title, @"?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3sibmFtZSI6IlRlc3QiLCJwYXNzd2QiOiJ0ZXN0In1d.cgRvLAcgkD03lBa8IgfJuXpb1WJhR7iUMIGEt9ctYVg"
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@%@%@", @"/api/TEAMS/", self.title, @"?token=", G_Token
 ];
     [[RKObjectManager sharedManager] getObjectsAtPath:url                                          parameters:queryParams
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {

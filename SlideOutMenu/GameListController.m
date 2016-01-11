@@ -82,8 +82,9 @@
     NSString *clientSecret = kCLIENTSECRET;*/
     
     NSDictionary *queryParams = NULL;
-    
-    [[RKObjectManager sharedManager] getObjectsAtPath:@"/api/GAME?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.W3sibmFtZSI6IlRlc3QiLCJwYXNzd2QiOiJ0ZXN0In1d.cgRvLAcgkD03lBa8IgfJuXpb1WJhR7iUMIGEt9ctYVg"
+    NSString *request = [NSString stringWithFormat:@"%@%@", @"/api/GAME?token=",  G_Token];
+
+    [[RKObjectManager sharedManager] getObjectsAtPath:request
                                            parameters:queryParams
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _rest = mappingResult.array;
