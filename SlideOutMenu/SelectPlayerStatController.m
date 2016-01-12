@@ -13,7 +13,9 @@
 
 @end
 
-@implementation SelectPlayerStatController
+@implementation SelectPlayerStatController {
+    NSArray *statPlayer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -122,15 +124,20 @@
     return YES;
 }
 */
-
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"StatPlayer"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PlayerStatViewController *myVC = [segue destinationViewController];
+        myVC.categories = self.categories;
+        myVC.idMatch = indexPath.row;
+        myVC._matchInfo = _rest[indexPath.row];
+    }
 }
-
-
+*/
 @end

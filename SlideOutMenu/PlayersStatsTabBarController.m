@@ -21,11 +21,11 @@
 -(void) viewWillLayoutSubviews {
 
     CGRect tabFrame = self.tabBar.frame;
-    self.tabBar.items[0].title = self._matchInfo.TEAM1;
+    //self.tabBar.items[0].title = self._matchInfo.TEAM1;
     ((SelectPlayerStatController *)self.viewControllers[0])._matchInfo.TEAM_NAME = self._matchInfo.TEAM_NAME1;
     ((SelectPlayerStatController *)self.viewControllers[1])._matchInfo.TEAM_NAME = self._matchInfo.TEAM_NAME2;
    
-    self.tabBar.items[1].title = self._matchInfo.TEAM2;
+    //self.tabBar.items[1].title = self._matchInfo.TEAM2;
     
     tabFrame.size.height = 70;
     tabFrame.origin.y = 50;
