@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UILabel *label;
+    
+    label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
+    label.text = [NSString stringWithFormat:@"%@ - %@ - %@",__matchInfo.SIZE, __matchInfo.NAME, __matchInfo.PASSES];
+    
+    [self.view addSubview:label];
+    
 }
 
 - (void)didReceiveMemoryWarning {

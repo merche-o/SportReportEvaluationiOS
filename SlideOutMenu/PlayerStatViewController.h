@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "playerData.h"
 
 @interface PlayerStatViewController : UIViewController
+
+@property(nonatomic, strong) playerData *_matchInfo;
 
 @end
