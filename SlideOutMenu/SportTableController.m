@@ -63,6 +63,21 @@
     venueMapping = [RKObjectMapping mappingForClass:[playerData class]];
     [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
     [venueMapping addAttributeMappingsFromArray:@[@"NAME"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"SHOOTS"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"PASSES"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"POINTS"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"POSSESSION_TIME"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"AVERAGE_SPEED"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"MAX_SPEED"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"TEAM_NAME"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"POSITION"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"SIZE"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"AGE"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"JERSEY_NUMBER"]];
+   
+    
+
+
     responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
                                                                       method:RKRequestMethodGET
                                                                  pathPattern:@"playersbyteam"
