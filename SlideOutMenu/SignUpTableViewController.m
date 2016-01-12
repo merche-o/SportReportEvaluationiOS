@@ -9,10 +9,59 @@
 #import "SignUpTableViewController.h"
 
 @interface SignUpTableViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *login;
+@property (strong, nonatomic) IBOutlet UITextField *email;
+@property (strong, nonatomic) IBOutlet UITextField *password1;
+@property (strong, nonatomic) IBOutlet UITextField *password2;
+@property (strong, nonatomic) IBOutlet UIButton *signup;
+@property (nonatomic, strong) NSArray *rest;
+
 
 @end
 
 @implementation SignUpTableViewController
+
+- (IBAction)signup:(id)sender {
+    if (self.password1.text == self.password2.text){
+        [self loadRest:self.login.text password:self.password1.text email:self.email.text];
+    }
+}
+
+- (void)loadRest:(NSString *)username password:(NSString *)pwd email:(NSString *)email
+{
+    /*   NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
+     NSString *clientID = kCLIENTID;
+     NSString *clientSecret = kCLIENTSECRET;*/
+    
+    NSDictionary *queryParams = NULL;
+    UserData *data = [UserData new];
+    
+    data.USER = username;
+    data.PASSWORD= pwd;
+    data.EMAIL = email;
+    NSLog(@"%@",data.USER);
+    [[RKObjectManager sharedManager] postObject:data path:@"/api/signup" parameters:queryParams success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        _rest = mappingResult.array;
+        NSLog(@"%@",_rest);
+
+        G_Token = ((UserData*)_rest[0]).Token;
+        
+        [self.tableView reloadData];
+        [self performSegueWithIdentifier:@"signup" sender:nil];
+        
+    }
+                                        failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                            NSLog(@"What do you mean by 'there is no coffee?': %@", error);
+                                            self.login.text = @"";
+                                            self.email.text = @"";
+                                            self.password1.text = @"";
+                                            self.password2.text = @"";
+                                        }];
+    
+    
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

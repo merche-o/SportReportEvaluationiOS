@@ -82,6 +82,18 @@
                                                                  statusCodes:[NSIndexSet indexSetWithIndex:200]];
     [objectManager addResponseDescriptor:responseDescriptor];
     
+    venueMapping = [RKObjectMapping mappingForClass:[teamData class]];
+    [venueMapping addAttributeMappingsFromArray:@[@"ID"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"TEAM_NAME"]];
+    [venueMapping addAttributeMappingsFromArray:@[@"INITIALS"]];
+    responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
+                                                                      method:RKRequestMethodGET
+                                                                 pathPattern:@"TEAMS/Basketball"
+                                                                     keyPath:@"Users"
+                                                                 statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    [objectManager addResponseDescriptor:responseDescriptor];
+
+    
     
     venueMapping = [RKObjectMapping mappingForClass:[UserData class]];
     [venueMapping addAttributeMappingsFromDictionary:@{
@@ -112,11 +124,47 @@
     
 
     RKObjectMapping *requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
-    [requestMapping addAttributeMappingsFromArray:@[@"USER", @"PASSWORD"]];
+    [requestMapping addAttributeMappingsFromArray:@[@"USER", @"PASSWORD", @"EMAIL"]];
     RKRequestDescriptor *requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping
                                                                                    objectClass:[UserData class] rootKeyPath:nil];
     
     [objectManager addRequestDescriptor: requestDescriptor];
+    
+    venueMapping = [RKObjectMapping mappingForClass:[UserData class]];
+    [venueMapping addAttributeMappingsFromDictionary:@{
+                                                       @"Users.ID":   @"ID",
+                                                       @"Users.USER":     @"USER",
+                                                       @"Users.PASSWORD":        @"PASSWORD",
+                                                       @"Users.EMAIL":        @"EMAIL",
+                                                       @"Users.PICTURE":        @"PICTURE",
+                                                       @"Users.DATE_CREATION":        @"DATE_CREATION",
+                                                       @"Users.CHECK_ACCOUNT":        @"CHECK_ACCOUNT",
+                                                       @"Token":        @"Token",
+                                                       }];
+    
+    
+    
+    
+    
+    // register mappings with the provider using a response descriptor
+    responseDescriptor =
+    [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
+                                                 method:RKRequestMethodPOST
+                                            pathPattern:@"signup"
+                                                keyPath:nil
+                                            statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor];
+    
+    
+    
+  //  requestMapping = [RKObjectMapping requestMapping]; // objectClass == NSMutableDictionary
+    //[requestMapping addAttributeMappingsFromArray:@[@"USER", @"PASSWORD", @"EMAIL"]];
+ //requestDescriptor = [RKRequestDescriptor requestDescriptorWithMapping:requestMapping
+      //                                                                          objectClass:[UserData class] rootKeyPath:nil];
+    
+    [objectManager addRequestDescriptor: requestDescriptor];
+
 
     
 }

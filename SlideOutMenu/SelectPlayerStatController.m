@@ -31,12 +31,10 @@
 
 - (void)loadRest
 {
-    /*   NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership (a.k.a Apple headquarters)
-     NSString *clientID = kCLIENTID;
-     NSString *clientSecret = kCLIENTSECRET;*/
+   
     
     NSDictionary *queryParams = NULL;
-    
+       NSLog(@"---%@---",self.tabBarItem.title);
     NSString *url = [NSString stringWithFormat:@"%@%@%@%@", @"/api/playersbyteam?token=", G_Token, @"&team=", self._matchInfo.TEAM_NAME
                      ];
     NSLog(@"%@",url);
@@ -50,6 +48,17 @@
                                               }];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (self.tabBarItem.title != NULL && !([self.tabBarItem.title isEqual:@"Item"])) {
+        self._matchInfo = [[teamData alloc] init];
+        self._matchInfo.TEAM_NAME = self.tabBarItem.title;
+        NSLog(@"view will Appear");
+        [self loadRest];
+
+    }
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
