@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PNChartDelegate.h"
 #import "playerData.h"
+#import "PNChart.h"
 
-@interface PlayerStatViewController : UIViewController
+@interface PlayerStatViewController : UIViewController<PNChartDelegate>
 
 @property(nonatomic, strong) playerData *_matchInfo;
 
