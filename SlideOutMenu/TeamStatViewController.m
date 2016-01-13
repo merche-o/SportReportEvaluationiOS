@@ -21,7 +21,7 @@
     
     
     
-    PNPieChart *pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(100.0, 75.0, 120.0, 120.0) items:items];
+    PNPieChart *pieChart = [[PNPieChart alloc] initWithFrame:CGRectMake(125.0, 100.0, 120.0, 120.0) items:items];
     pieChart.descriptionTextColor = [UIColor whiteColor];
     pieChart.descriptionTextFont  = [UIFont fontWithName:@"Avenir-Medium" size:14.0];
     [pieChart strokeChart];
@@ -29,7 +29,7 @@
     [self.view addSubview:pieChart];
     
     //For Line Chart
-    PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 225.0, SCREEN_WIDTH, 200.0)];
+    PNLineChart * lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 250.0, SCREEN_WIDTH, 200.0)];
     [lineChart setXLabels:@[@"0",@"15",@"30",@"45",@"60", @"75", @"90"]];
     
     // Line Chart No.1
@@ -52,8 +52,8 @@
     };
     
     lineChart.chartData = @[data01, data02];
-    [lineChart strokeChart];
     
+    [lineChart strokeChart];
     [self.view addSubview:lineChart];
     
     static NSNumberFormatter *barChartFormatter;
@@ -64,7 +64,7 @@
         barChartFormatter.maximumFractionDigits = 0;
     }
     PNBarChart *barChart;
-    barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 400, SCREEN_WIDTH, 100.0)];
+    barChart = [[PNBarChart alloc] initWithFrame:CGRectMake(0, 500, SCREEN_WIDTH, 100.0)];
     //        barChart.showLabel = NO;
     barChart.backgroundColor = [UIColor clearColor];
     barChart.yLabelFormatter = ^(CGFloat yValue){
