@@ -34,8 +34,8 @@
 {
     // initialize AFNetworking HTTPClient
     RKLogConfigureByName("*", RKLogLevelOff);
-   // NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
-    NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
+   NSURL *baseURL = [NSURL URLWithString:@"http://10.224.9.193:3000/api/"];
+    //NSURL *baseURL = [NSURL URLWithString:@"http://163.5.84.193:3000/api/"];
     
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     

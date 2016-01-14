@@ -56,35 +56,35 @@
         case 0:
             NSLog(@"%@",__matchInfo.TEAM1);
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"soccer_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             
             // ROUGE
-            myBtn.frame = CGRectMake(153,153,17,17); // goal
-            myBtn1.frame = CGRectMake(25,225,17,17); // defenseur gauche
-            myBtn2.frame = CGRectMake(115,215,17,17); // defenseur centre gauche
-            myBtn3.frame = CGRectMake(190,215,17,17); // defenseur centre droit
-            myBtn4.frame = CGRectMake(280,225,17,17); // defenseur droit
-            myBtn5.frame = CGRectMake(25,280,17,17); // milieu gauche
-            myBtn6.frame = CGRectMake(115,270,17,17); // milieu centre gauche
-            myBtn7.frame = CGRectMake(190,270,17,17); // milieu centre droit
-            myBtn8.frame = CGRectMake(280,280,17,17); // milieu droit
-            myBtn9.frame = CGRectMake(100,325,17,17); // attaquant gauche
-            myBtn10.frame = CGRectMake(203,325,17,17); // attaquant droit
+            myBtn.frame = CGRectMake(178,153,17,17); // goal
+            myBtn1.frame = CGRectMake(40,215,17,17); // defenseur gauche
+            myBtn2.frame = CGRectMake(135,215,17,17); // defenseur centre gauche
+            myBtn3.frame = CGRectMake(230,215,17,17); // defenseur centre droit
+            myBtn4.frame = CGRectMake(310,215,17,17); // defenseur droit
+            myBtn5.frame = CGRectMake(40,280,17,17); // milieu gauche
+            myBtn6.frame = CGRectMake(135,270,17,17); // milieu centre gauche
+            myBtn7.frame = CGRectMake(230,270,17,17); // milieu centre droit
+            myBtn8.frame = CGRectMake(310,280,17,17); // milieu droit
+            myBtn9.frame = CGRectMake(130,335,17,17); // attaquant gauche
+            myBtn10.frame = CGRectMake(233,335,17,17); // attaquant droit
 
             // JAUNE
-            myBtn11.frame = CGRectMake(153,545,17,17); // goal
-            myBtn12.frame = CGRectMake(25,473,17,17); // defenseur gauche
-            myBtn13.frame = CGRectMake(115,483,17,17); // defenseur centre gauche
-            myBtn14.frame = CGRectMake(190,483,17,17); // defenseur centre droit
-            myBtn15.frame = CGRectMake(280,473,17,17); // defenseur droit
-            myBtn16.frame = CGRectMake(25,418,17,17); // milieu gauche
-            myBtn17.frame = CGRectMake(115,428,17,17); // milieu centre gauche
-            myBtn18.frame = CGRectMake(190,428,17,17); // milieu centre droit
-            myBtn19.frame = CGRectMake(280,418,17,17); // milieu droit
-            myBtn20.frame = CGRectMake(100,373,17,17); // attaquant gauche
-            myBtn21.frame = CGRectMake(203,373,17,17); // attaquant droit
+            myBtn11.frame = CGRectMake(178,645,17,17); // goal
+            myBtn12.frame = CGRectMake(40,583,17,17); // defenseur gauche
+            myBtn13.frame = CGRectMake(135,583,17,17); // defenseur centre gauche
+            myBtn14.frame = CGRectMake(230,583,17,17); // defenseur centre droit
+            myBtn15.frame = CGRectMake(310,583,17,17); // defenseur droit
+            myBtn16.frame = CGRectMake(40,508,17,17); // milieu gauche
+            myBtn17.frame = CGRectMake(135,518,17,17); // milieu centre gauche
+            myBtn18.frame = CGRectMake(230,518,17,17); // milieu centre droit
+            myBtn19.frame = CGRectMake(310,508,17,17); // milieu droit
+            myBtn20.frame = CGRectMake(130,460,17,17); // attaquant gauche
+            myBtn21.frame = CGRectMake(233,460,17,17); // attaquant droit
 
             [myBtn setBackgroundImage:btnImage forState:UIControlStateNormal];
             [myBtn1 setBackgroundImage:btnImage forState:UIControlStateNormal];
@@ -138,21 +138,21 @@
             break;
         case 1:
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"basketball_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             // VERT
-            myBtn.frame = CGRectMake(153,335,17,17); //  meneur
-            myBtn1.frame = CGRectMake(100,300,17,17); //  arrière
-            myBtn2.frame = CGRectMake(80,265,17,17); // aillier
-            myBtn3.frame = CGRectMake(206,300,17,17); // aillier fort
-            myBtn4.frame = CGRectMake(226,265,17,17); // pivot
+            myBtn.frame = CGRectMake(178,385,17,17); //  meneur
+            myBtn1.frame = CGRectMake(130,375,17,17); //  arrière
+            myBtn2.frame = CGRectMake(80,335,17,17); // aillier
+            myBtn3.frame = CGRectMake(226,375,17,17); // aillier fort
+            myBtn4.frame = CGRectMake(266,335,17,17); // pivot
             // JAUNE
-            myBtn11.frame = CGRectMake(153,363,17,17); // meneur
-            myBtn12.frame = CGRectMake(100,398,17,17); //  arrière
-            myBtn13.frame = CGRectMake(80,428,17,17); // aillier
-            myBtn14.frame = CGRectMake(206,398,17,17); // aillier fort
-            myBtn15.frame = CGRectMake(226,428,17,17); // pivot
+            myBtn11.frame = CGRectMake(178,413,17,17); // meneur
+            myBtn12.frame = CGRectMake(130,428,17,17); //  arrière
+            myBtn13.frame = CGRectMake(80,468,17,17); // aillier
+            myBtn14.frame = CGRectMake(226,428,17,17); // aillier fort
+            myBtn15.frame = CGRectMake(266,468,17,17); // pivot
             
             [myBtn setBackgroundImage:btnImage2 forState:UIControlStateNormal];
             [myBtn1 setBackgroundImage:btnImage2 forState:UIControlStateNormal];
@@ -181,7 +181,7 @@
             break;
         case 2:
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"handball_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             [self.view addSubview:label];
@@ -189,7 +189,7 @@
             break;
         case 3:
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"football_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             [self.view addSubview:label];
@@ -197,7 +197,7 @@
             break;
         case 4:
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"hockey_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             [self.view addSubview:label];
@@ -205,7 +205,7 @@
             break;
         default:
             label = [[UILabel alloc] initWithFrame:CGRectMake(90,0,200,200)];
-            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, 320, 420)];
+            imageview = [[UIImageView alloc] initWithFrame:CGRectMake(0, 147, SCREEN_WIDTH, 520)];
             imageview.image = [UIImage imageNamed:@"soccer_field"];
             label.text = [NSString stringWithFormat:@"%@ %@ - %@ %@",__matchInfo.TEAM1, __matchInfo.SCORE1, __matchInfo.SCORE2, __matchInfo.TEAM2];
             [self.view addSubview:label];
